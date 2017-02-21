@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        
+        <script src="js/jquery-1.11.2.js" type="text/javascript"></script>
+		<script src="js/jquery.mobile.custom.js" type="text/javascript"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/ui.touch.punch.js"></script>
+        <script src="js/transit.js"></script>
+
+        <title>Super Mexicano</title>
+    </head>
+    <body onLoad="inicio()">
+        <div class="app" style="overflow:hidden">
+        
+       	  <div id="portada" class="paginas">
+                <div class="gris" style="height:1.5%;"></div>
+                <div class="pr_rosa" style="height:7%; top:1.5%;"></div>
+                <div class="verde" style="height:1.5%; top:8.5%;"></div>
+                <div class="pr_mas" style="height:7%; top:10%;"></div>
+                <div class="gris" style="height:5%; top:17%;"></div>
+                
+                <img src="img/logo_grande.png" class="centrar_h" height="32%" style="top: 28%"/> 
+                
+                <div class="gris" style="height:2%; top:66%;"></div>
+                
+                <div style="position:absolute; width:450%; height:11%; top:71%;">
+                    <img src="img/ic1.png" class="icos ic1"/> 
+                    <img src="img/ic2.png" class="icos ic2"/> 
+                    <img src="img/ic3.png" class="icos ic3"/> 
+                    <img src="img/ic4.png" class="icos ic4"/> 
+                    <img src="img/ic5.png" class="icos ic5"/> 
+                    <img src="img/ic1.png" class="icos ic1"/> 
+                    <img src="img/ic2.png" class="icos ic2"/> 
+                    <img src="img/ic3.png" class="icos ic3"/> 
+                    <img src="img/ic4.png" class="icos ic4"/> 
+                    <img src="img/ic5.png" class="icos ic5"/>
+                    <img src="img/ic1.png" class="icos ic1"/> 
+                    <img src="img/ic2.png" class="icos ic2"/> 
+                    <img src="img/ic3.png" class="icos ic3"/> 
+                    <img src="img/ic4.png" class="icos ic4"/> 
+                    <img src="img/ic5.png" class="icos ic5"/>  
+                </div>
+                
+                <div class="gris" style="height:2%; top:85%;"></div>
+                <div class="pr_rombo" style="height:5%; top:87%;"></div>
+                <div class="pr_bolita" style="height:8%; top:92%;"></div>
+            </div>
+            
+            
+            <div id="todo" class="paginas" style="visibility:hidden;">
+            	<img id="bt_home" src="img/loguito.png"  height="5%" class="centrar_h" style="top:.5%; z-index:1000; cursor:pointer;"/>
+                <img id="bt_cerrar" src="img/cerrar.png"  height="5%" style="top:.8%; position:absolute; left:3%; z-index:1000; cursor:pointer; display:none"/>
+                <img id="bt_menu" src="img/menu.png"  height="5%" style="top:.8%; position:absolute; left:3%; z-index:1000; cursor:pointer; display:none"/>
+                <img id="bt_atras" src="img/atras.png"  height="5%" style="top:.8%; position:absolute; right:3%; z-index:1000; cursor:pointer; display:none"/>
+                <img id="bt_alerta" src="img/alerta.png"  height="5%" style="top:.8%; position:absolute; right:13%; z-index:1000; cursor:pointer; display:none"/>
+				<div class="verde" style="top:6.5%; height:2%; z-index:1000"></div>
+                <div class="pr_rosa" style="top:8.5%; height:3.5%; z-index:1000"></div>
+                <div class="gris" style="top:12%; height:1%; z-index:1000"></div>
+                
+                
+                
+                
+                <div id="registro" class="contenido" style="visibility:hidden">
+                      <div class="titulos" style="top:6%;">Registro</div>
+                      
+   
+                      <input type="text" class="textos" style="top:13%; padding-top:1%; padding-bottom:1%" value="Nombre:">
+                      <div class="lineas" style="top:20%"></div>
+                        
+                      <input type="text" class="textos" style="top:23%; padding-top:1%; padding-bottom:1%" value="Email:">
+                      <div class="lineas" style="top:30%"></div>
+                        
+                      <input type="text" class="textos" style="top:33%; padding-top:1%; padding-bottom:1%" value="Contraseña:">
+                      <div class="lineas" style="top:40%"></div>
+                        
+                      <input type="text" class="textos" style="top:43%; width:26%; padding-top:1%; padding-bottom:1%" value="Genero:">
+                      <div class="lineas" style="top:50%; width:26%"></div>
+                        
+                      <input type="text" class="textos" style="top:43%; left:47%; width:38%; padding-top:1%; padding-bottom:1%" value="Fecha nacimiento:">
+                      <div class="lineas" style="top:50%; width:38%; left:47%"></div>
+                        
+                      <div id="bt_requiere" class="avisos" style="top:55%; left:21%; cursor:pointer">¿Requiere factura?</div>
+                      <img id="bt_requiere2" src="img/cuadrito.png" style="position:absolute; top:53.5%; height:5%; left:15%; cursor:pointer"/>
+                      <img id="palomita1" src="img/palomita.png" style="position:absolute; top:53.5%; height:5%; left:15%; cursor:pointer"/>
+                      
+                      <div class="avisos" style="top:55%; left:53%; cursor:pointer">Acepto el Aviso de Privacidad</div>
+                      <img src="img/cuadrito.png" style="position:absolute; top:53.5%; height:5%; left:47%; cursor:pointer"/> 
+                      
+                      <div id="registro_continuar" style="position:absolute; top:64%; width:70%; left:15%; height:8%; background:#8BC542; cursor:pointer">
+                      	  <div class="botones" style="color:#FFFFFF; top:50%">Continuar</div>
+                      </div>
+                      
+                      <div id="registro_face" style="position:absolute; top:74%; width:70%; left:15%; height:8%; background:#35518D; background-image:url(img/face.png); background-repeat:no-repeat; background-size:auto 60%; background-position:15px 40%; cursor:pointer">
+                      	  <div class="botones" style="color:#FFFFFF; top:50%">Inicar Sesión con Facebook</div>
+                      </div>
+                      
+                      <div class="avisos" style="top:87%; width:100%; text-align:center">¿Ya tienes una cuenta? <span style="color:#E11D8D">Iniciar Sesión</span></div>
+                      
+                     
+                </div>
+                
+                
+                <div id="clave" class="contenido" style="visibility:hidden">
+                      <div style="position:absolute; width:70%; left:15%; top:15%; height:76%; background-color:#333333">
+                      	<div class="textos" style="color:rgba(255,255,255,1.00); top:10%; text-align:center">
+                        	<i>Lorem ipsum dolor sit amet, sed diamconsectetuer adipiscing elit, sed diam nonum
+my nibh sed diameuismod tincidunt.</i>
+                        </div>
+                        
+                        
+                        	<input id="claves" type="text"  class="centrar_v" style="color:rgba(255,255,255,1.00); border:1px solid rgba(255,255,255,1.00); height:10%; top:50%; font-family:Arial; text-align:center; background:none; width:calc(70% - 2px); left:15%;" value="Clave">
+                        	
+                        
+                        
+                        <div id="registro_bien" style="position:absolute; top:62%; width:70%; left:15%; height:10%; background:#8BC542; cursor:pointer">
+                      	  <div class="botones" style="color:#FFFFFF; top:50%">Continuar</div>
+                        </div>
+                        
+                        <div class="avisos" style="top:87%; width:100%; text-align:center; color:rgba(255,255,255,1.00)">Para cambiar la contraseña, accede a “Ver/ Editar Perfil”</div>
+                      </div>
+                </div>
+                
+                
+                     <script>
+                      		$('#registro_continuar, #registro_face').click(function(){
+								$('#clave').css('visibility','visible')
+								$('#clave').transition({left:'130%', rotate: '20deg'}, 0)
+								$('#clave').animate({left:'0%', rotate: '0deg'}, 1000)
+								$('.contenido').css('z-index','0')
+								$('#registro').css('z-index','1')
+								$('#clave').css('z-index','2')
+							})
+							
+							$('#registro_bien').click(function(){
+								$('#codigo').css('visibility','visible')
+								$('#codigo').transition({left:'130%', rotate: '20deg'}, 0)
+								$('#codigo').animate({left:'0%', rotate: '0deg'}, 1000)
+								$('.contenido').css('z-index','0')
+								$('#clave').css('z-index','1')
+								$('#codigo').css('z-index','2')
+								$('#bt_menu').fadeIn()
+								//$('#bt_atras').fadeIn()
+								$('#bt_alerta').fadeIn()
+								$('#bt_alerta').css('right', '3%')
+							})
+                      </script>
+                
+                
+                <div id="codigo" class="contenido" style="visibility:hidden">
+                  <div class="titulos" style="top:6%;">Código de Cliente</div>
+                      
+                  <img src="img/codigo.png" class="centrar_h" style="height:35%; top:20%"/>
+				<div class="avisos2" style="top:62%; width:64%; left:18%; text-align:justify">Lorem ipsum dolor sit amet, sed diamconse te
+  tuer adipiscing elit, sed diam nonummy nibh sed diameuismod tincidunt.</div>
+  
+  					<div class="gris" style="height:2.5%; top:84%;"></div>
+                    <div class="verde" style="height:2.5%; top:86.5%;"></div>
+                    <div class="pr_equis" style="height:7%; top:89%;"></div>
+  					<div class="gris" style="height:1.5%; top:96%;"></div>
+                </div>
+                
+                
+                <div id="facturacion" class="contenido" style="visibility:hidden">
+                  <div class="titulos" style="top:6%;">Facturación Electrónica</div>
+                      
+				  <div class="textos" style="top:16%; text-align:center">Selecciona una opción:</div>
+                  
+                  <div style="position:absolute; top:36%; width:70%; left:15%; height:8%; background:#8BC542">
+                      <div id="bt_facturar" class="botones" style="color:#FFFFFF; top:50%">FACTURAR</div>
+                  </div>
+                  <div style="position:absolute; top:48%; width:70%; left:15%; height:8%; background:#E11D8D">
+                      <div id="bt_consultar" class="botones" style="color:#FFFFFF; top:50%">CONSULTAR</div>
+                  </div>
+  
+  					<div class="gris" style="height:2.5%; top:84%;"></div>
+                    <div class="verde" style="height:2.5%; top:86.5%;"></div>
+                    <div class="pr_equis" style="height:7%; top:89%;"></div>
+  					<div class="gris" style="height:1.5%; top:96%;"></div>
+                </div>
+                
+                
+                
+                <div id="consulta" class="contenido" style="visibility:hidden">
+                  <div class="titulos" style="top:6%;">Consulta</div>
+                      
+				  <div class="textos" style="top:16%; text-align:left; width:30%">Facturas del dia:</div>
+                  
+                  <div class="textos" style="top:15%; text-align:center; width:40%; left:45%; border:1px solid #949494; padding:5px;">01/10/16 - 01/01/17</div>
+                  
+                  <div class="textos ver_factura" style="top:28%; text-align:center; color:rgba(0,0,0,1.00); cursor:pointer">XML90DF0927eRT4G1Y43tr76ER57ef249.xml</div>
+                  <div class="textos ver_factura" style="top:33%; text-align:center; color:rgba(0,0,0,1.00); cursor:pointer">PDF90DF0927eRT4G1Y43tr76ER57ef249.pdf</div>
+                  
+                  <div style="position:absolute; left:15%; top:38%; width:70%; height:1px; background:rgba(158,158,158,1.00)"></div>
+                  
+                  <div class="textos ver_factura" style="top:42%; text-align:center; color:rgba(0,0,0,1.00); cursor:pointer">XML90DF0927eRT4G1Y43tr76ER57ef249.xml</div>
+                  <div class="textos ver_factura" style="top:47%; text-align:center; color:rgba(0,0,0,1.00); cursor:pointer">PDF90DF0927eRT4G1Y43tr76ER57ef249.pdf</div>
+                  
+                  <div style="position:absolute; left:15%; top:52%; width:70%; height:1px; background:rgba(158,158,158,1.00)"></div>
+                  
+                  <div class="textos ver_factura" style="top:56%; text-align:center; color:rgba(0,0,0,1.00); cursor:pointer">XML90DF0927eRT4G1Y43tr76ER57ef249.xml</div>
+                  <div class="textos ver_factura" style="top:61%; text-align:center; color:rgba(0,0,0,1.00); cursor:pointer">PDF90DF0927eRT4G1Y43tr76ER57ef249.pdf</div>
+                  
+                  <div style="position:absolute; left:15%; top:66%; width:70%; height:1px; background:rgba(158,158,158,1.00)"></div>
+                  
+                  
+                  
+  
+  					<div class="gris" style="height:2.5%; top:84%;"></div>
+                    <div class="verde" style="height:2.5%; top:86.5%;"></div>
+                    <div class="pr_equis" style="height:7%; top:89%;"></div>
+  					<div class="gris" style="height:1.5%; top:96%;"></div>
+                </div>
+                
+                
+                <div id="fac" class="contenido" style="visibility:hidden">
+                  <div class="textos" style="top:6%; text-align:center; color:rgba(0,0,0,1.00)">XML90DF0927eRT4G1Y43tr76ER57ef249.xml</div>
+                  <div style="position:absolute; left:15%; top:11%; width:70%; height:1px; background:rgba(158,158,158,1.00)"></div>
+                  <img src="img/fac.png" class="centrar_h" style="top:15%; height:76%"/>
+                </div>
+                
+                
+              <div id="promociones" class="contenido" style="visibility:hidden">
+                <div class="titulos" style="top:6%;">Promociones</div>
+                  
+                <img src="img/promo.jpg" class="centrar" style="width:85%;"/>
+                
+                <img src="img/bolita.png" class="centrar_h" style="top:85%; height:3%"/> 
+                <img src="img/bolita2.png" class="centrar_h" style="top:85%; height:3%; margin-left:-40px;"/> 
+                <img src="img/bolita.png" class="centrar_h" style="top:85%; height:3%; margin-left:40px;"/> 
+                
+                
+              </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <div style="position:absolute; width:450%; height:7%; top:84%; z-index:1000; background-color:#FFFFFF">
+                    <img src="img/ic1.png" class="icos ic1"/> 
+                    <img src="img/ic2.png" class="icos ic2"/> 
+                    <img src="img/ic3.png" class="icos ic3"/> 
+                    <img src="img/ic4.png" class="icos ic4"/> 
+                    <img src="img/ic5.png" class="icos ic5"/> 
+                    <img src="img/ic1.png" class="icos ic1"/> 
+                    <img src="img/ic2.png" class="icos ic2"/> 
+                    <img src="img/ic3.png" class="icos ic3"/> 
+                    <img src="img/ic4.png" class="icos ic4"/> 
+                    <img src="img/ic5.png" class="icos ic5"/>
+                    <img src="img/ic1.png" class="icos ic1"/> 
+                    <img src="img/ic2.png" class="icos ic2"/> 
+                    <img src="img/ic3.png" class="icos ic3"/> 
+                    <img src="img/ic4.png" class="icos ic4"/> 
+                    <img src="img/ic5.png" class="icos ic5"/>  
+                </div>
+                
+                
+                
+                <div id="opciones" class="contenido" style="height:85%; visibility:hidden; z-index:2020">
+                  <div id="bt1" style="position:absolute; width:100%; height:16%; top:0px; cursor:pointer">
+                  		<img src="img/ic1.png" class="centrar_v" style="left:15%; height:60%"/>
+                        <div class="menu centrar_v" style="left:35%; text-align:left; width:65%; color:#666">VER/ EDITAR PERFIL</div>
+						<div style="position:absolute; bottom:1px; height:1px; width:100%; background-color:rgba(135,135,135,1.00)"></div>
+                  </div>
+                  <div id="bt2" style="position:absolute; width:100%; height:16%; top:16%; cursor:pointer">
+                  		<img src="img/ic2.png" class="centrar_v" style="left:15%; height:60%"/>
+                  		<div class="menu centrar_v" style="left:35%; text-align:left; width:65%; color:#666">FACTURA ELECTRÓNICA</div>
+                        <div style="position:absolute; bottom:1px; height:1px; width:100%; background-color:rgba(135,135,135,1.00)"></div>
+                  </div>
+                  <div id="bt3" style="position:absolute; width:100%; height:16%; top:32%; cursor:pointer">
+                  		<img src="img/ic3.png" class="centrar_v" style="left:15%; height:60%"/>
+                        <div class="menu centrar_v" style="left:35%; text-align:left; width:65%; color:#666">PROMOCIONES</div>
+                  		<div style="position:absolute; bottom:1px; height:1px; width:100%; background-color:rgba(135,135,135,1.00)"></div>
+                  </div>
+                  <div id="bt4" style="position:absolute; width:100%; height:16%; top:48%; cursor:pointer">
+                  		<img src="img/ic4.png" class="centrar_v" style="left:15%; height:60%"/>
+                        <div class="menu centrar_v" style="left:35%; text-align:left; width:65%; color:#666">CÓDIGO DE CLIENTE</div>
+                  		<div style="position:absolute; bottom:1px; height:1px; width:100%; background-color:rgba(135,135,135,1.00)"></div>
+                  </div>
+                  <div id="bt5" style="position:absolute; width:100%; height:16%; top:64%; cursor:pointer">
+                  		<img src="img/ic5.png" class="centrar_v" style="left:15%; height:60%"/>
+                        <div class="menu centrar_v" style="left:35%; text-align:left; width:65%; color:#666">CERRAR SESIÓN</div>
+                  </div>
+                  <div id="bt6" style="position:absolute; width:100%; height:16%; top:80%; background:#333333; cursor:pointer">
+                  		<div class="centrar" style="color:rgba(255,255,255,1.00); text-align:center"><span id="visita1">Visita:</span><br><span id="visita" style="font-size:22px"><b>www.elsuper.mx</b></span></div>
+                  </div>
+                </div>
+                
+                
+                <div id="perfil" class="contenido" style="height:85%; visibility:hidden; z-index:1001">
+                  	  <div class="titulos" style="top:6%;">Perfil</div>
+
+                      <div type="text" class="textos" style="top:15%;">Foto:</div>
+                      
+                      <div style="position:absolute; width:30%; left:15%; top:20%; background:#8BC542; height:22%;"></div>
+                      
+                      <div id="bt_edita" style="position:absolute; width:35%; left:50%; top:20%; background:#E11D8D; height:11%; cursor:pointer">
+                      		<div id="edita" class="centrar" style="color:#ffffff; width:100%; text-align:center">Edita los datos<br>de facturación</div>
+                      </div>
+                      
+                      <div type="text" class="textos" style="top:37%; left:50%">Facturas:</div>
+                      <div class="lineas" style="left:50%; top:42%; width:35%"></div>
+                      
+                      <input type="text" class="textos" style="top:44%; padding-top:1%; padding-bottom:1%" value="Nombre:">
+                      <div class="lineas" style="top:50%"></div>
+                        
+                      <input type="text" class="textos" style="top:52%; padding-top:1%; padding-bottom:1%" value="Email:">
+                      <div class="lineas" style="top:58%"></div>
+                        
+                      <input type="text" class="textos" style="top:60%; padding-top:1%; padding-bottom:1%" value="Contraseña:">
+                      <div class="lineas" style="top:66%"></div>
+                        
+                      <input type="text" class="textos" style="top:68%; padding-top:1%; padding-bottom:1%; width:26%" value="Genero:">
+                      <div class="lineas" style="top:74%; width:26%"></div>
+                        
+                      <input type="text" class="textos" style="top:68%; padding-top:1%; padding-bottom:1%; left:47%; width:38%" value="Fecha nacimiento:">
+                      <div class="lineas" style="top:74%; width:38%; left:47%"></div>
+                        
+
+                      <div id="bt_finalizar" style="position:absolute; top:81%; width:70%; left:15%; height:7%; background:#E11D8D; cursor:pointer">
+                      	  <div class="botones" style="color:#FFFFFF; top:50%">Finalizar</div>
+                      </div>
+                      
+                </div>
+                
+                
+                 <div id="factura" class="contenido" style="visibility:hidden; z-index:1001">
+                 	  <div style="position:absolute; width:100%; height:112%; background-color:#ffffff"></div>
+                  	  <div class="titulos" style="top:6%;">Alta de datos</div>
+
+                      <input type="text" class="textos" style="top:13%; padding-top:1%; padding-bottom:1%" value="RFC:">
+                      <div class="lineas" style="top:20%"></div>
+                        
+                      <input type="text" class="textos" style="top:23%; padding-top:1%; padding-bottom:1%" value="Razon Social:">
+                      <div class="lineas" style="top:30%"></div>
+                        
+                      <input type="text" class="textos" style="top:33%; padding-top:1%; padding-bottom:1%" value="Calle y numero:">
+                      <div class="lineas" style="top:40%"></div>
+                        
+                      <input type="text" class="textos" style="top:43%; padding-top:1%; padding-bottom:1%" value="Municipio o delegación:">
+                      <div class="lineas" style="top:50%"></div>
+                      
+                      <input type="text" class="textos" style="top:53%; padding-top:1%; padding-bottom:1%" value="Estado:">
+                      <div class="lineas" style="top:60%"></div>
+                      
+                      <input type="text" class="textos" style="top:63%; padding-top:1%; padding-bottom:1%" value="Codigo Postal:">
+                      <div class="lineas" style="top:70%"></div>
+                      
+                      <input type="text" class="textos" style="top:73%; padding-top:1%; padding-bottom:1%" value="Correo:">
+                      <div class="lineas" style="top:80%"></div>
+                        
+                      
+                        
+                      <div class="avisos" style="top:85%; left:22%">Declaro IEPS</div>
+                      <img src="img/cuadrito.png" style="position:absolute; top:83.5%; height:5%; left:15%"/>
+                      
+                      <div class="avisos" style="top:85%; left:57%">Extranjero</div>
+                      <img src="img/cuadrito.png" style="position:absolute; top:83.5%; height:5%; left:50%"/> 
+                      
+                      <div id="bt_continuar" style="position:absolute; top:97%; width:70%; left:15%; height:8%; background:#8BC542">
+                      	  <div class="botones" style="color:#FFFFFF; top:50%">Continuar</div>
+                      </div>
+                      
+                      
+                      
+                      <div class="avisos" style="top:91%; width:100%; text-align:center"><span style="color:#E11D8D">* Campos obligatorios</span></div>
+                      
+                </div>
+                
+                
+                
+                
+                
+                
+                <div class="gris" style="height:1%; top:92.5%; z-index:3002"></div>
+                <div class="pr_rombo" style="height:2.5%; top:93.5%; z-index:3002"></div>
+                <div class="pr_bolita" style="height:4%; top:96%; z-index:3002"></div>
+            </div>
+        
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        
+        
+        <script>
+		var ssalta
+		
+		function salta(){
+        	$('.ic1').stop().animate({marginTop:'-.8%'}, 400)
+			$('.ic1').animate({marginTop:'0px'}, 300)
+			$('.ic2').stop().delay(300).animate({marginTop:'-.8%'}, 400)
+			$('.ic2').animate({marginTop:'0px'}, 300)
+			$('.ic3').stop().delay(600).animate({marginTop:'-.8%'}, 400)
+			$('.ic3').animate({marginTop:'0px'}, 300)
+			$('.ic4').stop().delay(900).animate({marginTop:'-.8%'}, 400)
+			$('.ic4').animate({marginTop:'0px'}, 300)
+			$('.ic5').stop().delay(1200).animate({marginTop:'-.8%'}, 400)
+			$('.ic5').animate({marginTop:'0px'}, 300)
+			ssalta = setTimeout('salta()', 4000)
+		}
+		salta()
+		
+		
+	
+		inicio()
+		function inicio(){
+				var $window = $(window);
+				width = $window.width();
+				height = $window.height();
+				$('.titulos').css('font-size', height/27+'px')
+				
+				$('.menu').css('font-size', height/35+'px')
+				$('#visita1').css('font-size', height/55+'px')
+				$('#visita').css('font-size', height/35+'px')
+				
+				$('#edita').css('font-size', height/50+'px')
+				
+				$('.textos').css('font-size', height/40+'px')
+				$('.textos').css('line-height', (height/40)+10+'px')
+				$('.avisos').css('font-size', height/57+'px')
+				$('.avisos').css('line-height', (height/57)+5+'px')
+				
+				$('.avisos2').css('font-size', height/50+'px')
+				$('.avisos2').css('line-height', (height/50)+5+'px')
+				
+				$('.botones').css('font-size', height/35+'px')
+				$('.botones').css('margin-top', -(height/35)/2+'px')
+				$('#claves').css('font-size', height/30+'px')
+	  	}
+		
+		setTimeout('pasa_intro()', 3000)
+				
+				function pasa_intro(){
+					$('#todo').css('visibility', 'visible')
+					$('#registro').css('visibility', 'visible')
+					$('#todo').animate({left:'100%'}, 0)
+					$('#todo').animate({left:'0%'}, 1000)
+					$('#portada').delay(1000).fadeOut(0)
+					//$('#todo')
+				}
+				
+				var posicion = 0
+				$('#bt_menu').click(function(){
+								$('#opciones').css('visibility','visible')
+								$('#opciones').transition({left:'130%', rotate: '20deg'}, 0)
+								$('#opciones').animate({left:'0%', rotate: '0deg'}, 1000)
+								$('#opciones').css('z-index','2020')
+	
+								$('#bt_cerrar').fadeIn()
+								$('#bt_menu').fadeOut()
+				})
+				
+				$('#bt_cerrar').click(function(){
+								$('#opciones').transition({left:'130%', rotate: '20deg'}, 1000)
+	
+								$('#bt_cerrar').fadeOut()
+								$('#bt_menu').fadeIn()
+				})
+				
+				
+				$('#bt1').click(function(){
+								$('#perfil').css('visibility','visible')
+								$('#perfil').transition({left:'0%', rotate: '0deg'}, 0)
+								$('#perfil').css('z-index','1001')
+								$('#opciones').transition({left:'130%', rotate: '20deg'}, 1000)
+								posicion=1
+								
+								$('#bt_cerrar').fadeOut()
+								$('#bt_menu').fadeIn()
+								$('#bt_atras').fadeIn()
+								$('#bt_alerta').animate({right:'13%'},500)
+				})
+				
+				var edi=0
+				
+				$('#bt_edita').click(function(){
+								$('#factura').css('visibility','visible')
+								$('#factura').transition({left:'130%', rotate: '20deg'}, 0)
+								$('.contenido').css('z-index','1')
+								$('#perfil').css('z-index','2000')
+								$('#factura').css('z-index','2001')
+								$('#factura').transition({left:'0%', rotate: '0deg'}, 1000)
+								posicion=9
+								edi=2
+				})
+				
+				$('#bt_requiere, #bt_requiere2').click(function(){
+								$('#factura').css('visibility','visible')
+								$('#factura').transition({left:'130%', rotate: '20deg'}, 0)
+								//$('.contenido').css('z-index','1')
+								//$('#perfil').css('z-index','2000')
+								$('#factura').css('z-index','2001')
+								$('#factura').transition({left:'0%', rotate: '0deg'}, 1000)
+								edi=1
+				})
+				
+				
+				$('#bt2').click(function(){
+								$('#facturacion').css('visibility','visible')
+								$('#facturacion').transition({left:'0%', rotate: '0deg'}, 0)
+								$('.contenido').css('z-index','1')
+								$('#facturacion').css('z-index','990')
+								$('#opciones').css('z-index','2000')
+								$('#opciones').transition({left:'130%', rotate: '20deg'}, 1000)
+								posicion=2
+								
+								$('#bt_cerrar').fadeOut()
+								$('#bt_menu').fadeIn()
+								$('#bt_atras').fadeIn()
+								$('#bt_alerta').animate({right:'13%'},500)
+				})
+				
+				
+				
+				$('#bt_facturar').click(function(){
+								$('#codigo').css('visibility','visible')
+								$('#codigo').transition({left:'130%', rotate: '20deg'}, 0)
+								//$('.contenido').css('z-index','1')
+								$('#codigo').css('z-index','991')
+								$('#codigo').transition({left:'0%', rotate: '0deg'}, 1000)
+								posicion=6
+				})
+				$('#bt_consultar').click(function(){
+								$('#consulta').css('visibility','visible')
+								$('#consulta').transition({left:'130%', rotate: '20deg'}, 0)
+								//$('.contenido').css('z-index','1')
+								$('#consulta').css('z-index','991')
+								$('#consulta').transition({left:'0%', rotate: '0deg'}, 1000)
+								posicion=7
+				})
+				$('.ver_factura').click(function(){
+								$('#fac').css('visibility','visible')
+								$('#fac').transition({left:'130%', rotate: '20deg'}, 0)
+								//$('.contenido').css('z-index','1')
+								$('#fac').css('z-index','992')
+								$('#fac').transition({left:'0%', rotate: '0deg'}, 1000)
+								posicion=8
+				})
+				
+				
+				
+				$('#bt3').click(function(){
+								$('#promociones').css('visibility','visible')
+								$('#promociones').transition({left:'0%', rotate: '0deg'}, 0)
+								$('.contenido').css('z-index','1')
+								$('#promociones').css('z-index','990')
+								$('#opciones').css('z-index','2000')
+								$('#opciones').transition({left:'130%', rotate: '20deg'}, 1000)
+								posicion=3
+								
+								$('#bt_cerrar').fadeOut()
+								$('#bt_menu').fadeIn()
+								$('#bt_atras').fadeIn()
+								$('#bt_alerta').animate({right:'13%'},500)
+				})
+				
+				$('#bt4').click(function(){
+								$('#codigo').css('visibility','visible')
+								$('#codigo').transition({left:'0%', rotate: '0deg'}, 0)
+								$('.contenido').css('z-index','1')
+								$('#codigo').css('z-index','990')
+								$('#opciones').css('z-index','2000')
+								$('#opciones').transition({left:'130%', rotate: '20deg'}, 1000)
+								posicion=4
+								
+								$('#bt_cerrar').fadeOut()
+								$('#bt_menu').fadeIn()
+								$('#bt_atras').fadeOut()
+								$('#bt_alerta').animate({right:'3%'},500)
+				})
+				
+				
+				
+				
+				
+				
+				
+				$('#bt5').click(function(){
+								$('#registro').css('visibility','visible')
+								$('#registro').transition({left:'0%', rotate: '0deg'}, 0)
+								$('.contenido').css('z-index','1')
+								$('#registro').css('z-index','990')
+								$('#opciones').css('z-index','2000')
+								$('#opciones').transition({left:'130%', rotate: '20deg'}, 1000)
+								$('#bt_menu').fadeOut()
+								$('#bt_atras').fadeOut()
+								$('#bt_alerta').fadeOut()
+								posicion=5
+								
+								$('#bt_cerrar').fadeOut()
+								$('#bt_menu').fadeIn()
+				})
+				
+				
+				
+				$('#bt_continuar').click(function(){
+					$('#factura').transition({left:'130%', rotate: '20deg'}, 1000)
+					if(edi==2){
+						posicion=1
+					}else{
+						posicion=0
+					}
+				})
+				
+				$('#bt_atras').click(function(){
+					if(posicion==6){
+						$('#codigo').transition({left:'130%', rotate: '20deg'}, 1000)
+						posicion=2
+					}else if(posicion==7){
+						$('#consulta').transition({left:'130%', rotate: '20deg'}, 1000)
+						posicion=2
+					}else if(posicion==8){
+						$('#fac').transition({left:'130%', rotate: '20deg'}, 1000)
+						posicion=7
+					}else if(posicion==9){
+						$('#factura').transition({left:'130%', rotate: '20deg'}, 1000)
+						if(edi==2){
+							posicion=1
+						}else{
+							posicion=0
+						}
+					}else{
+						
+								$('#codigo').css('visibility','visible')
+								$('#codigo').transition({left:'0%', rotate: '0deg'}, 0)
+								$('.contenido').css('z-index','1')
+								$('#codigo').css('z-index','2')
+								if(posicion==1){
+									$('#perfil').css('z-index','3')
+									$('#perfil').transition({left:'130%', rotate: '20deg'}, 1000)
+									$('#bt_atras').fadeOut()
+									$('#bt_alerta').animate({right:'3%'},500)
+								}else if(posicion==2){
+									$('#facturacion').css('z-index','3')
+									$('#facturacion').transition({left:'130%', rotate: '20deg'}, 1000)
+									$('#bt_atras').fadeOut()
+									$('#bt_alerta').animate({right:'3%'},500)
+								}else if(posicion==3){
+									$('#promociones').css('z-index','3')
+									$('#promociones').transition({left:'130%', rotate: '20deg'}, 1000)
+									$('#bt_atras').fadeOut()
+									$('#bt_alerta').animate({right:'3%'},500)
+								}
+								posicion=4
+					}
+				})
+				
+				$('#bt_home, #bt_finalizar').click(function(){
+								$('#codigo').css('visibility','visible')
+								$('#codigo').transition({left:'0%', rotate: '0deg'}, 0)
+								$('.contenido').css('z-index','1')
+								$('#codigo').css('z-index','2')
+								if(posicion==1){
+									$('#perfil').css('z-index','2000')
+									$('#perfil').transition({left:'130%', rotate: '20deg'}, 1000)
+									$('#bt_atras').fadeOut()
+									$('#bt_alerta').animate({right:'3%'},500)
+								}else if(posicion==2){
+									$('#facturacion').css('z-index','3')
+									$('#facturacion').transition({left:'130%', rotate: '20deg'}, 1000)
+									$('#bt_atras').fadeOut()
+									$('#bt_alerta').animate({right:'3%'},500)
+								}else if(posicion==3){
+									$('#promociones').css('z-index','3')
+									$('#promociones').transition({left:'130%', rotate: '20deg'}, 1000)
+									$('#bt_atras').fadeOut()
+									$('#bt_alerta').animate({right:'3%'},500)
+								}
+								posicion=4
+				})
+				
+				if (StatusBar.isVisible) { 
+					alert('hola')
+				} 
+				
+				StatusBar.hide(); 
+                     
+		
+        </script>
+    </body>
+</html>

@@ -1,0 +1,128 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#FFFFFF;
+    
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+	width:100%; 
+	height:100%;
+    position:absolute;             /* position in the center of the screen */   
+}
+.paginas {
+	width:100%; 
+	height:100%;
+    position:absolute;
+	background-color:rgba(255,255,255,1.00) 
+}
+.contenido{
+	position:absolute; top:13%; width:100%; height:71%; background-color:rgba(255,255,255,1.00)
+}
+
+.titulos{
+	position:absolute; width:100%; font-family:"Arial Narrow"; text-align:center; color:#E11D8D; font-size:25px; font-weight:bold
+}
+.menu{
+	position:absolute; width:100%; font-family:"Arial Narrow"; text-align:center; color:#E11D8D; font-size:25px; font-weight:bold
+}
+.textos{
+	position:absolute; width:70%; left:15%; font-family:arial; text-align:center; color:#666666; font-size:20px; text-align:left; border:none; background:none
+}
+.avisos, .avisos2{
+	position:absolute; font-family:arial; text-align:center; color:#666666; font-size:15px; text-align:left
+}
+
+
+.botones{
+	font-family:"Arial Narrow"; text-align:center; color:#ffffff; font-size:15px; position:absolute; width:100%
+}
+
+
+.lineas{
+	position:absolute; width:70%; left:15%; height:1px; background-color:#7F7F7F
+}
+
+.gris{
+	position:absolute; width:100%; background-color:#333333
+}
+.verde{
+	position:absolute; width:100%; background-color:#8BC542
+}
+.pr_rosa{
+	position:absolute; width:100%; background-image:url(../img/pr_rosa.png); background-repeat:repeat-x; background-size:auto 100%;
+}
+.pr_mas{
+	position:absolute; width:100%; background-image:url(../img/pr_mas.png); background-repeat:repeat-x; background-size:auto 100%;
+}
+
+.pr_equis{
+	position:absolute; width:100%; background-image:url(../img/pr_equis.png); background-repeat:repeat-x; background-size:auto 100%;
+}
+.pr_rombo{
+	position:absolute; width:100%; background-image:url(../img/pr_rombo.png); background-repeat:repeat-x; background-size:auto 100%;
+}
+.pr_bolita{
+	position:absolute; width:100%; background-image:url(../img/pr_bolita.png); background-repeat:repeat-x; background-size:auto 100%;
+}
+.icos{
+	position:relative; float:left; height:100%
+}
+
+.centrar {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.centrar_v {
+	position: absolute;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
+
+.centrar_h {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0%);
+}
+
+::-webkit-scrollbar          { width:12px;}
+::-webkit-scrollbar-button       { opacity:0}
+::-webkit-scrollbar-track        { opacity:0}
+::-webkit-scrollbar-track-piece  { opacity:0}
+::-webkit-scrollbar-thumb        { background-color:#3d3b46;}
+::-webkit-scrollbar-corner       { opacity:0}
+::-webkit-resizer{ opacity:0}
+
