@@ -348,22 +348,25 @@
 				data: $(this).serialize(),
 				success: function(data) {
 					   			alert(data)
-							    localStorage.setItem("id", data);
-								alert(localStorage.setItem("id"))
-								$('#clave').css('visibility','visible')
-								$('#clave').transition({left:'130%', rotate: '20deg'}, 0)
-								$('#clave').animate({left:'0%', rotate: '0deg'}, 1000)
-								$('.contenido').css('z-index','0')
-								$('#registro').css('z-index','1')
-								$('#clave').css('z-index','2')
-						
+								//$('#clave').css('visibility','visible')
+								//$('#clave').transition({left:'130%', rotate: '20deg'}, 0)
+								//$('#clave').animate({left:'0%', rotate: '0deg'}, 1000)
+								//$('.contenido').css('z-index','0')
+								//$('#registro').css('z-index','1')
+								//$('#clave').css('z-index','2')
+								
+								$('#enviar_codigo').load('http://dogs-life.com.mx/sm/enviar_correo.php?codigo='+13131313) 
 				}
 			})
 			return false;
         }); 
+		
                   </script>
                     
                 </div>
+                
+                
+                <div id="enviar_codigo">aaaaa</div>
                 
                 
                 <div id="clave" class="contenido" style="visibility:hidden">
@@ -1280,7 +1283,7 @@
 				})
 				
 		
-                     
+                   
 		
         </script>
     </body>
