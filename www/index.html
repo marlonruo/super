@@ -28,11 +28,15 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         
-        <script src="js/jquery-1.11.2.js" type="text/javascript"></script>
+        <!--<script src="js/jquery-1.11.2.js"></script>
 		<script src="js/jquery.mobile.custom.js" type="text/javascript"></script>
         <script src="js/jquery-ui.js"></script>
         <script src="js/ui.touch.punch.js"></script>
         <script src="js/transit.js"></script>
+        <script type="text/javascript" src="js/jquery.form.js"></script>-->
+        
+        <script src="js/jquery-1.11.2.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
 
         <title>Super Mexicano</title>
     </head>
@@ -90,40 +94,259 @@
                 <div id="registro" class="contenido" style="visibility:hidden">
                       <div class="titulos" style="top:6%;">Registro</div>
                       
-   
-                      <input type="text" class="textos" style="top:13%; padding-top:1%; padding-bottom:1%" value="Nombre:">
+   					<form name="forma_registro" id="forma_registro" method="post" action="http://dogs-life.com.mx/sm/enviar.php">
+                      <input id="nombre" name="nombre" type="text" class="textos" style="top:13%; padding-top:1%; padding-bottom:1%" value="Nombre:" onFocus="borrar1()" onBlur="checar1()" tabindex="1">
                       <div class="lineas" style="top:20%"></div>
                         
-                      <input type="text" class="textos" style="top:23%; padding-top:1%; padding-bottom:1%" value="Email:">
+                      <input id="email" name="email" type="text" class="textos" style="top:23%; padding-top:1%; padding-bottom:1%" value="Email:" onFocus="borrar2()" onBlur="checar2()" tabindex="2">
                       <div class="lineas" style="top:30%"></div>
                         
-                      <input type="text" class="textos" style="top:33%; padding-top:1%; padding-bottom:1%" value="Contraseña:">
+                      <input id="contrasena" name="contrasena" type="text" class="textos" style="top:33%; padding-top:1%; padding-bottom:1%" value="Contraseña:" onFocus="borrar3()" onBlur="checar3()" tabindex="3">
                       <div class="lineas" style="top:40%"></div>
                         
-                      <input type="text" class="textos" style="top:43%; width:26%; padding-top:1%; padding-bottom:1%" value="Genero:">
+                      <select id="genero" name="genero" class="textos" style="top:43%; width:26%; padding-top:1%; padding-bottom:1%">
+                            <option>Hombre</option>
+                            <option>Mujer</option>
+                      </select> 
+                      
+                      <script>
+                      	function borrar1(){
+							if(document.getElementById('nombre').value=='Nombre:'){
+								document.getElementById('nombre').value=''
+							}
+						}
+				
+						function checar1(){
+							if(document.getElementById('nombre').value==''){
+								document.getElementById('nombre').value='Nombre:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar2(){
+							if(document.getElementById('email').value=='Email:'){
+								document.getElementById('email').value=''
+							}
+						}
+				
+						function checar2(){
+							if(document.getElementById('email').value==''){
+								document.getElementById('email').value='Email:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar3(){
+							if(document.getElementById('contrasena').value=='Contraseña:'){
+								document.getElementById('contrasena').value=''
+								$('#contrasena').attr('type', 'password');
+							}
+						}
+				
+						function checar3(){
+							if(document.getElementById('contrasena').value==''){
+								document.getElementById('contrasena').value='Contraseña:'
+								$('#contrasena').attr('type', 'text');
+							}
+							StatusBar.hide(); 
+						}
+                      </script>
+                      
+                   
                       <div class="lineas" style="top:50%; width:26%"></div>
                         
-                      <input type="text" class="textos" style="top:43%; left:47%; width:38%; padding-top:1%; padding-bottom:1%" value="Fecha nacimiento:">
+                        
+                      <select id="nacimiento" name="nacimiento" class="textos" style="top:43%; left:47%; width:38%; padding-top:1%; padding-bottom:1%">
+                            <option>Año Nacimiento</option>
+                            <option>2010</option>
+                            <option>2009</option>
+                            <option>2008</option>
+                            <option>2007</option>
+                            <option>2006</option>
+                            <option>2005</option>
+                            <option>2004</option>
+                            <option>2003</option>
+                            <option>2002</option>
+                            <option>2001</option>
+                            <option>2000</option>
+                            <option>1999</option>
+                            <option>1998</option>
+                            <option>1997</option>
+                            <option>1996</option>
+                            <option>1999</option>
+                            <option>1998</option>
+                            <option>1997</option>
+                            <option>1996</option>
+                            <option>1995</option>
+                            <option>1994</option>
+                            <option>1993</option>
+                            <option>1992</option>
+                            <option>1991</option>
+                            <option>1990</option>
+                            <option>1989</option>
+                            <option>1988</option>
+                            <option>1987</option>
+                            <option>1986</option>
+                            <option>1985</option>
+                            <option>1984</option>
+                            <option>1983</option>
+                            <option>1982</option>
+                            <option>1981</option>
+                            <option>1980</option>
+                            <option>1979</option>
+                            <option>1978</option>
+                            <option>1977</option>
+                            <option>1976</option>
+                            <option>1975</option>
+                            <option>1974</option>
+                            <option>1973</option>
+                            <option>1972</option>
+                            <option>1971</option>
+                            <option>1970</option>
+                            <option>1969</option>
+                            <option>1968</option>
+                            <option>1967</option>
+                            <option>1966</option>
+                            <option>1965</option>
+                            <option>1964</option>
+                            <option>1963</option>
+                            <option>1962</option>
+                            <option>1961</option>
+                            <option>1960</option>
+                            <option>1959</option>
+                            <option>1958</option>
+                            <option>1957</option>
+                            <option>1956</option>
+                            <option>1955</option>
+                            <option>1954</option>
+                            <option>1953</option>
+                            <option>1952</option>
+                            <option>1951</option>
+                            <option>1950</option>
+                            <option>1949</option>
+                            <option>1948</option>
+                            <option>1947</option>
+                            <option>1946</option>
+                            <option>1945</option>
+                            <option>1944</option>
+                            <option>1943</option>
+                            <option>1942</option>
+                            <option>1941</option>
+                            <option>1940</option>
+                            <option>1939</option>
+                            <option>1938</option>
+                            <option>1937</option>
+                            <option>1936</option>
+                            <option>1935</option>
+                            <option>1934</option>
+                            <option>1933</option>
+                            <option>1932</option>
+                            <option>1931</option>
+                            <option>1930</option>
+                      </select>
+                      
                       <div class="lineas" style="top:50%; width:38%; left:47%"></div>
                         
                       <div id="bt_requiere" class="avisos" style="top:55%; left:21%; cursor:pointer">¿Requiere factura?</div>
                       <img id="bt_requiere2" src="img/cuadrito.png" style="position:absolute; top:53.5%; height:5%; left:15%; cursor:pointer"/>
-                      <img id="palomita1" src="img/palomita.png" style="position:absolute; top:53.5%; height:5%; left:15%; cursor:pointer"/>
+                      <img id="palomita1" src="img/palomita.png" style="position:absolute; top:53.5%; height:5%; left:15%; cursor:pointer; display:none"/>
                       
-                      <div class="avisos" style="top:55%; left:53%; cursor:pointer">Acepto el Aviso de Privacidad</div>
-                      <img src="img/cuadrito.png" style="position:absolute; top:53.5%; height:5%; left:47%; cursor:pointer"/> 
+                      <div id="aviso" class="avisos" style="top:55%; left:53%; cursor:pointer">Acepto el Aviso de Privacidad</div>
+                      <img id="aviso2" src="img/cuadrito.png" style="position:absolute; top:53.5%; height:5%; left:47%; cursor:pointer"/>
+                      <img id="palomita2" src="img/palomita.png" style="position:absolute; top:53.5%; height:5%; left:47%; cursor:pointer; display:none"/> 
                       
-                      <div id="registro_continuar" style="position:absolute; top:64%; width:70%; left:15%; height:8%; background:#8BC542; cursor:pointer">
-                      	  <div class="botones" style="color:#FFFFFF; top:50%">Continuar</div>
-                      </div>
+                      <script>
+					  var avi=0
+                      	$('#aviso, #aviso2, #palomita2').click(function(){
+							if(avi==0){
+								$('#palomita2').show()
+								avi=1
+							}else{
+								$('#palomita2').hide()
+								avi=0
+							}
+						})
+                      </script>
                       
-                      <div id="registro_face" style="position:absolute; top:74%; width:70%; left:15%; height:8%; background:#35518D; background-image:url(img/face.png); background-repeat:no-repeat; background-size:auto 60%; background-position:15px 40%; cursor:pointer">
+                      
+                      <input id="registro_continuar" class="botones" type="submit" style="position:absolute; top:68%; width:calc(70% + 4px); left:15%; height:8%; background:#8BC542; cursor:pointer; border:none; color:#fff" value="Continuar">
+                      
+                      
+                      
+                      <div id="registro_face" style="position:absolute; top:76%; width:71%; left:15%; height:8%; background:#35518D; background-image:url(img/face.png); background-repeat:no-repeat; background-size:auto 60%; background-position:15px 40%; cursor:pointer">
                       	  <div class="botones" style="color:#FFFFFF; top:50%">Inicar Sesión con Facebook</div>
                       </div>
                       
                       <div class="avisos" style="top:87%; width:100%; text-align:center">¿Ya tienes una cuenta? <span style="color:#E11D8D">Iniciar Sesión</span></div>
                       
-                     
+                      <div id="aviso1" class="avisos" style="top:61%; width:100%; text-align:center"><span style="color:#E11D8D"></span></div>
+                  </form> 
+                  
+                  <script>
+         $('#forma_registro').submit(function() {
+			var nombre = document.getElementById("nombre").value
+			var email = document.getElementById("email").value
+			var contrasena = document.getElementById("contrasena").value
+			
+			if(document.getElementById("nombre").value == 'Nombre:' || document.getElementById("nombre").value == ''){
+				$('#aviso1').html('* nombre requerido')
+				setTimeout("$('#aviso1').html('')", 1500)
+				return false;
+			}
+	
+			var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;	
+			if (!filtro.test(email)) {
+				$('#aviso1').html('* email incorrecto')
+				setTimeout("$('#aviso1').html('')", 1500)
+			   return false;
+			}
+	
+			if(document.getElementById("contrasena").value == 'Contraseña:' || document.getElementById("contrasena").value == ''){
+				$('#aviso1').html('* Contraseña incorrecta')
+				setTimeout("$('#aviso1').html('')", 1500)
+				return false;
+			}
+			
+			if($("#contrasena").val().length < 8){
+				$('#aviso1').html('* Contraseña debe tener mas de 8 caracteres')
+				setTimeout("$('#aviso1').html('')", 1500)
+				return false;
+			}
+			
+
+			if(document.getElementById("nacimiento").value=="Año Nacimiento"){
+				$('#aviso1').html('* Elige tu año de nacimiento')
+				setTimeout("$('#aviso1').html('')", 1500)
+				return false;
+			}
+			
+			if(avi==0){
+				$('#aviso1').html('* Debes aceptar el Aviso de Privacidad')
+				setTimeout("$('#aviso1').html('')", 1500)
+				return false;
+			}
+			
+		
+			$.ajax({
+				type: 'POST',
+				url: $(this).attr('action'),
+				data: $(this).serialize(),
+				success: function(data) {
+					    alert(data)
+						//localStorage.setItem("nombre", document.getElementById("f_nombre").value);
+								$('#clave').css('visibility','visible')
+								$('#clave').transition({left:'130%', rotate: '20deg'}, 0)
+								$('#clave').animate({left:'0%', rotate: '0deg'}, 1000)
+								$('.contenido').css('z-index','0')
+								$('#registro').css('z-index','1')
+								$('#clave').css('z-index','2')
+						
+				}
+			})
+			return false;
+        }); 
+                  </script>
+                    
                 </div>
                 
                 
@@ -135,9 +358,26 @@ my nibh sed diameuismod tincidunt.</i>
                         </div>
                         
                         
-                        	<input id="claves" type="text"  class="centrar_v" style="color:rgba(255,255,255,1.00); border:1px solid rgba(255,255,255,1.00); height:10%; top:50%; font-family:Arial; text-align:center; background:none; width:calc(70% - 2px); left:15%;" value="Clave">
+                        	<input id="claves" name="claves" type="text"  class="centrar_v" style="color:rgba(255,255,255,1.00); border:1px solid rgba(255,255,255,1.00); height:10%; top:50%; font-family:Arial; text-align:center; background:none; width:calc(70% - 2px); left:15%;" value="Clave" onFocus="borrar1_cl()" onBlur="checar1_cl()" >
+                           
+                           
+                           
+                            
+                        <script>
+                      	function borrar1_cl(){
+							if(document.getElementById('claves').value=='Clave'){
+								document.getElementById('claves').value=''
+							}
+						}
+				
+						function checar1_cl(){
+							if(document.getElementById('claves').value==''){
+								document.getElementById('claves').value='Clave'
+							}
+							StatusBar.hide(); 
+						}
                         	
-                        
+                        </script>
                         
                         <div id="registro_bien" style="position:absolute; top:62%; width:70%; left:15%; height:10%; background:#8BC542; cursor:pointer">
                       	  <div class="botones" style="color:#FFFFFF; top:50%">Continuar</div>
@@ -149,14 +389,14 @@ my nibh sed diameuismod tincidunt.</i>
                 
                 
                      <script>
-                      		$('#registro_continuar, #registro_face').click(function(){
+                      		/*$('#registro_continuar, #registro_face').click(function(){
 								$('#clave').css('visibility','visible')
 								$('#clave').transition({left:'130%', rotate: '20deg'}, 0)
 								$('#clave').animate({left:'0%', rotate: '0deg'}, 1000)
 								$('.contenido').css('z-index','0')
 								$('#registro').css('z-index','1')
 								$('#clave').css('z-index','2')
-							})
+							})*/
 							
 							$('#registro_bien').click(function(){
 								$('#codigo').css('visibility','visible')
@@ -359,44 +599,226 @@ my nibh sed diameuismod tincidunt.</i>
                  <div id="factura" class="contenido" style="visibility:hidden; z-index:1001">
                  	  <div style="position:absolute; width:100%; height:112%; background-color:#ffffff"></div>
                   	  <div class="titulos" style="top:6%;">Alta de datos</div>
-
-                      <input type="text" class="textos" style="top:13%; padding-top:1%; padding-bottom:1%" value="RFC:">
-                      <div class="lineas" style="top:20%"></div>
+					  
+                      <form name="forma_factura" id="forma_factura" method="post" action="lala.php">
+                      
+                          <input id="rfc" name="rfc" type="text" class="textos" style="top:13%; padding-top:1%; padding-bottom:1%" value="RFC:" onFocus="borrar1a()" onBlur="checar1a()" tabindex="11">
+                          <div class="lineas" style="top:20%"></div>
+                            
+                          <input id="rz" name="rz" type="text" class="textos" style="top:23%; padding-top:1%; padding-bottom:1%" value="Razon Social:" onFocus="borrar2a()" onBlur="checar2a()" tabindex="12">
+                          <div class="lineas" style="top:30%"></div>
+                            
+                          <input  id="calle" name="calle" type="text" class="textos" style="top:33%; padding-top:1%; padding-bottom:1%" value="Calle y numero:" onFocus="borrar3a()" onBlur="checar3a()" tabindex="13">
+                          <div class="lineas" style="top:40%"></div>
+                            
+                          <input id="municipio" name="municipio" type="text" class="textos" style="top:43%; padding-top:1%; padding-bottom:1%" value="Municipio o delegación:" onFocus="borrar4a()" onBlur="checar4a()" tabindex="14">
+                          <div class="lineas" style="top:50%"></div>
+                          
+                          <input id="estado" name="estado" type="text" class="textos" style="top:53%; padding-top:1%; padding-bottom:1%" value="Estado:" onFocus="borrar5a()" onBlur="checar5a()" tabindex="15">
+                          <div class="lineas" style="top:60%"></div>
+                          
+                          <input id="cp" name="cp" type="text" class="textos" style="top:63%; padding-top:1%; padding-bottom:1%" value="Codigo Postal:" onFocus="borrar6a()" onBlur="checar6a()" tabindex="16">
+                          <div class="lineas" style="top:70%"></div>
+                      
+                      
+                      
+                      <script>
+	
+					  
+                      	function borrar1a(){
+							if(document.getElementById('rfc').value=='RFC:'){
+								document.getElementById('rfc').value=''
+							}
+						}
+				
+						function checar1a(){
+							if(document.getElementById('rfc').value==''){
+								document.getElementById('rfc').value='RFC:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar2a(){
+							if(document.getElementById('rz').value=='Razon Social:'){
+								document.getElementById('rz').value=''
+							}
+						}
+				
+						function checar2a(){
+							if(document.getElementById('rz').value==''){
+								document.getElementById('rz').value='Razon Social:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar3a(){
+							if(document.getElementById('calle').value=='Calle y numero:'){
+								document.getElementById('calle').value=''
+							}
+						}
+				
+						function checar3a(){
+							if(document.getElementById('calle').value==''){
+								document.getElementById('calle').value='Calle y numero:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar4a(){
+							if(document.getElementById('municipio').value=='Municipio o delegación:'){
+								document.getElementById('municipio').value=''
+							}
+						}
+				
+						function checar4a(){
+							if(document.getElementById('municipio').value==''){
+								document.getElementById('municipio').value='Municipio o delegación:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar5a(){
+							if(document.getElementById('estado').value=='Estado:'){
+								document.getElementById('estado').value=''
+							}
+						}
+				
+						function checar5a(){
+							if(document.getElementById('estado').value==''){
+								document.getElementById('estado').value='Estado:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar6a(){
+							if(document.getElementById('cp').value=='Codigo Postal:'){
+								document.getElementById('cp').value=''
+							}
+						}
+				
+						function checar6a(){
+							if(document.getElementById('cp').value==''){
+								document.getElementById('cp').value='Codigo Postal:'
+							}
+							StatusBar.hide(); 
+						}
+                      </script>
                         
-                      <input type="text" class="textos" style="top:23%; padding-top:1%; padding-bottom:1%" value="Razon Social:">
-                      <div class="lineas" style="top:30%"></div>
-                        
-                      <input type="text" class="textos" style="top:33%; padding-top:1%; padding-bottom:1%" value="Calle y numero:">
-                      <div class="lineas" style="top:40%"></div>
-                        
-                      <input type="text" class="textos" style="top:43%; padding-top:1%; padding-bottom:1%" value="Municipio o delegación:">
-                      <div class="lineas" style="top:50%"></div>
-                      
-                      <input type="text" class="textos" style="top:53%; padding-top:1%; padding-bottom:1%" value="Estado:">
-                      <div class="lineas" style="top:60%"></div>
-                      
-                      <input type="text" class="textos" style="top:63%; padding-top:1%; padding-bottom:1%" value="Codigo Postal:">
-                      <div class="lineas" style="top:70%"></div>
-                      
-                      <input type="text" class="textos" style="top:73%; padding-top:1%; padding-bottom:1%" value="Correo:">
-                      <div class="lineas" style="top:80%"></div>
-                        
                       
                         
-                      <div class="avisos" style="top:85%; left:22%">Declaro IEPS</div>
-                      <img src="img/cuadrito.png" style="position:absolute; top:83.5%; height:5%; left:15%"/>
+                      <div id="declaro1" class="avisos" style="top:74%; left:22%">Declaro IEPS</div>
+                      <img id="declaro2" src="img/cuadrito.png" style="position:absolute; top:72.5%; height:5%; left:15%"/>
+                      <img id="palomita3" src="img/palomita.png" style="position:absolute; top:72.5%; height:5%; left:15%; cursor:pointer; display:none"/> 
                       
-                      <div class="avisos" style="top:85%; left:57%">Extranjero</div>
-                      <img src="img/cuadrito.png" style="position:absolute; top:83.5%; height:5%; left:50%"/> 
+                      <script>
+					  var dec=0
+                      	$('#declaro, #declaro2, #palomita3').click(function(){
+							if(dec==0){
+								$('#palomita3').show()
+								dec=1
+							}else{
+								$('#palomita3').hide()
+								dec=0
+							}
+						})
+                      </script>
                       
-                      <div id="bt_continuar" style="position:absolute; top:97%; width:70%; left:15%; height:8%; background:#8BC542">
-                      	  <div class="botones" style="color:#FFFFFF; top:50%">Continuar</div>
+                      <div id="extranjero1" class="avisos" style="top:74%; left:57%">Extranjero</div>
+                      <img id="extranjero2" src="img/cuadrito.png" style="position:absolute; top:72.5%; height:5%; left:50%"/> 
+                      <img id="palomita4" src="img/palomita.png" style="position:absolute; top:72.5%; height:5%; left:50%; cursor:pointer; display:none"/> 
+                      
+                      <script>
+					  var ext=0
+                      	$('#extranjero, #extranjero2, #palomita4').click(function(){
+							if(ext==0){
+								$('#palomita4').show()
+								ext=1
+							}else{
+								$('#palomita4').hide()
+								ext=0
+							}
+						})
+                      </script>
+                      
+                      <div id="bt_continuar" style="position:absolute; top:87%; width:70%; left:15%; height:8%; background:#8BC542">
+                      	  <div class="botones" style="color:#FFFFFF; top:50%">¡Listo!</div>
+                      </div>
+                      
+                      <div id="bt_cancelar" style="position:absolute; top:97%; width:70%; left:15%; height:8%; background:#E11D8D">
+                      	  <div class="botones" style="color:#FFFFFF; top:50%">Cancelar</div>
                       </div>
                       
                       
                       
-                      <div class="avisos" style="top:91%; width:100%; text-align:center"><span style="color:#E11D8D">* Campos obligatorios</span></div>
-                      
+                      <div id="avisos2" class="avisos" style="top:81%; width:100%; text-align:center"><span style="color:#E11D8D">* Campos obligatorios</span></div>
+                      </form>
+     <script>
+         $('#forma_factura').submit(function() {
+			var rfc = document.getElementById("rfc").value
+			var rz = document.getElementById("rz").value
+			var calle = document.getElementById("calle").value
+			var municipio = document.getElementById("municipio").value
+			var estado = document.getElementById("estado").value
+			var cp = document.getElementById("cp").value
+			
+			if(rfc == 'RFC:' || rfc == ''){
+				$('#avisos2').html('* rfc requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			if(rz == 'Razon Social:' || rz == ''){
+				$('#avisos2').html('* Razon Social requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			if(calle == 'Calle y numero:' || calle == ''){
+				$('#avisos2').html('* calle y numero requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			if(municipio == 'Municipio o delegación:' || municipio == ''){
+				$('#avisos2').html('* municipio o delegacion requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			if(estado == 'Estado:' || estado == ''){
+				$('#avisos2').html('* estado requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			if(cp == 'Codigo Postal:' || cp == ''){
+				$('#avisos2').html('* codigo postal requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+	
+			
+			
+			
+			//alert('bien')
+			$.ajax({
+				type: 'POST',
+				url: $(this).attr('action'),
+				data: $(this).serialize(),
+				success: function(data) {
+						//localStorage.setItem("nombre", document.getElementById("f_nombre").value);
+								$('#clave').css('visibility','visible')
+								$('#clave').transition({left:'130%', rotate: '20deg'}, 0)
+								$('#clave').animate({left:'0%', rotate: '0deg'}, 1000)
+								$('.contenido').css('z-index','0')
+								$('#registro').css('z-index','1')
+								$('#clave').css('z-index','2')
+						
+				}
+			})
+			return false;
+        }); 
+                      </script>
                 </div>
                 
                 
@@ -418,6 +840,13 @@ my nibh sed diameuismod tincidunt.</i>
         
         
         <script>
+		
+		
+		
+		
+		
+		
+		
 		var ssalta
 		
 		function salta(){
@@ -471,6 +900,7 @@ my nibh sed diameuismod tincidunt.</i>
 					$('#todo').animate({left:'100%'}, 0)
 					$('#todo').animate({left:'0%'}, 1000)
 					$('#portada').delay(1000).fadeOut(0)
+					StatusBar.hide();
 					//$('#todo')
 				}
 				
@@ -483,6 +913,7 @@ my nibh sed diameuismod tincidunt.</i>
 	
 								$('#bt_cerrar').fadeIn()
 								$('#bt_menu').fadeOut()
+								StatusBar.hide(); 
 				})
 				
 				$('#bt_cerrar').click(function(){
@@ -492,8 +923,19 @@ my nibh sed diameuismod tincidunt.</i>
 								$('#bt_menu').fadeIn()
 				})
 				
+				$('#bt_cancelar').click(function(){
+								$('#factura').transition({left:'130%', rotate: '20deg'}, 1000)
+								$('#palomita1').hide()
+								palo=0
+				})
+				
+				$('#bt_continuar').click(function(){
+								$('#factura').transition({left:'130%', rotate: '20deg'}, 1000)
+				})
+				
 				
 				$('#bt1').click(function(){
+								$('#factura').transition({left:'130%', rotate: '20deg'}, 0)
 								$('#perfil').css('visibility','visible')
 								$('#perfil').transition({left:'0%', rotate: '0deg'}, 0)
 								$('#perfil').css('z-index','1001')
@@ -504,6 +946,7 @@ my nibh sed diameuismod tincidunt.</i>
 								$('#bt_menu').fadeIn()
 								$('#bt_atras').fadeIn()
 								$('#bt_alerta').animate({right:'13%'},500)
+								StatusBar.hide(); 
 				})
 				
 				var edi=0
@@ -519,14 +962,23 @@ my nibh sed diameuismod tincidunt.</i>
 								edi=2
 				})
 				
-				$('#bt_requiere, #bt_requiere2').click(function(){
-								$('#factura').css('visibility','visible')
-								$('#factura').transition({left:'130%', rotate: '20deg'}, 0)
-								//$('.contenido').css('z-index','1')
-								//$('#perfil').css('z-index','2000')
-								$('#factura').css('z-index','2001')
-								$('#factura').transition({left:'0%', rotate: '0deg'}, 1000)
-								edi=1
+				
+				var palo =0
+				$('#bt_requiere, #bt_requiere2, #palomita1').click(function(){
+								if(palo==0){
+									$('#palomita1').show()
+									$('#factura').css('visibility','visible')
+									$('#factura').transition({left:'130%', rotate: '20deg'}, 0)
+									//$('.contenido').css('z-index','1')
+									//$('#perfil').css('z-index','2000')
+									$('#factura').css('z-index','2001')
+									$('#factura').transition({left:'0%', rotate: '0deg'}, 1000)
+									edi=1
+									palo=1
+								}else{
+									$('#palomita1').hide()
+									palo=0
+								}
 				})
 				
 				
@@ -543,6 +995,7 @@ my nibh sed diameuismod tincidunt.</i>
 								$('#bt_menu').fadeIn()
 								$('#bt_atras').fadeIn()
 								$('#bt_alerta').animate({right:'13%'},500)
+								StatusBar.hide(); 
 				})
 				
 				
@@ -587,6 +1040,7 @@ my nibh sed diameuismod tincidunt.</i>
 								$('#bt_menu').fadeIn()
 								$('#bt_atras').fadeIn()
 								$('#bt_alerta').animate({right:'13%'},500)
+								StatusBar.hide(); 
 				})
 				
 				$('#bt4').click(function(){
@@ -602,6 +1056,7 @@ my nibh sed diameuismod tincidunt.</i>
 								$('#bt_menu').fadeIn()
 								$('#bt_atras').fadeOut()
 								$('#bt_alerta').animate({right:'3%'},500)
+								StatusBar.hide(); 
 				})
 				
 				
@@ -624,11 +1079,13 @@ my nibh sed diameuismod tincidunt.</i>
 								
 								$('#bt_cerrar').fadeOut()
 								$('#bt_menu').fadeIn()
+								StatusBar.hide(); 
 				})
 				
 				
 				
 				$('#bt_continuar').click(function(){
+					StatusBar.hide(); 
 					$('#factura').transition({left:'130%', rotate: '20deg'}, 1000)
 					if(edi==2){
 						posicion=1
@@ -704,11 +1161,7 @@ my nibh sed diameuismod tincidunt.</i>
 								posicion=4
 				})
 				
-				if (StatusBar.isVisible) { 
-					alert('hola')
-				} 
-				
-				StatusBar.hide(); 
+		
                      
 		
         </script>
