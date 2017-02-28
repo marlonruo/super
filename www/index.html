@@ -348,7 +348,8 @@
 				data: $(this).serialize(),
 				success: function(data) {
 					   			alert(data)
-							    //localStorage.setItem("nombre", document.getElementById("f_nombre").value);
+							    localStorage.setItem("id", data);
+								alert(localStorage.setItem("id"))
 								$('#clave').css('visibility','visible')
 								$('#clave').transition({left:'130%', rotate: '20deg'}, 0)
 								$('#clave').animate({left:'0%', rotate: '0deg'}, 1000)
@@ -368,8 +369,7 @@
                 <div id="clave" class="contenido" style="visibility:hidden">
                       <div style="position:absolute; width:70%; left:15%; top:15%; height:76%; background-color:#333333">
                       	<div class="textos" style="color:rgba(255,255,255,1.00); top:10%; text-align:center">
-                        	<i>Lorem ipsum dolor sit amet, sed diamconsectetuer adipiscing elit, sed diam nonum
-my nibh sed diameuismod tincidunt.</i>
+                        	<i>Se envio un correo con tu Clave<br>escribela aqui para continuar</i>
                         </div>
                         
                         
@@ -617,40 +617,40 @@ my nibh sed diameuismod tincidunt.</i>
 					  
                       <form name="forma_factura" id="forma_factura" method="put">
                       
-                          <input id="fac_RFC" name="fac_RFC" type="text" class="textos" style="top:13%; padding-top:1%" value="RFC:" onFocus="borrar1a()" onBlur="checar1a()" tabindex="11">
+                          <input id="fac_RFC" name="fac_RFC" type="text" class="textos" style="top:13%; padding-top:1%; padding-bottom:1%" value="RFC:" onFocus="borrar1a()" onBlur="checar1a()" tabindex="11">
                           <div class="lineas" style="top:20%"></div>
                             
-                          <input id="fac_Rfactura" name="fac_Rfactura" type="text" class="textos" style="top:20%; padding-top:1%" value="Razon Social:" onFocus="borrar2a()" onBlur="checar2a()" tabindex="12">
+                          <input id="fac_Rfactura" name="fac_Rfactura" type="text" class="textos" style="top:20%; padding-top:1%; padding-bottom:1%" value="Razon Social:" onFocus="borrar2a()" onBlur="checar2a()" tabindex="12">
                           <div class="lineas" style="top:27%"></div>
                             
-                          <input  id="fac_Calle" name="fac_Calle" type="text" class="textos" style="top:27%; width:38%; padding-top:1%" value="Calle:" onFocus="borrar3a()" onBlur="checar3a()" tabindex="13">
+                          <input  id="fac_Calle" name="fac_Calle" type="text" class="textos" style="top:27%; width:38%; padding-top:1%; padding-bottom:1%" value="Calle:" onFocus="borrar3a()" onBlur="checar3a()" tabindex="13">
                          
                           <div class="lineas" style="top:34%;"></div>
                           
-                          <input  id="fac_NumE" name="fac_NumE" type="text" class="textos" style="top:34%; width:34%; padding-top:1%" value="Num Ext:" onFocus="borrar4a()" onBlur="checar4a()" tabindex="13">
-                          <input  id="fac_NumI" name="fac_NumI" type="text" class="textos" style="top:34%; width:34%; left:51%; padding-top:1%" value="Num Int:" onFocus="borrar5a()" onBlur="checar5a()" tabindex="13">
+                          <input  id="fac_NumE" name="fac_NumE" type="text" class="textos" style="top:34%; width:34%; padding-top:1%; padding-bottom:1%" value="Num Ext:" onFocus="borrar4a()" onBlur="checar4a()" tabindex="13">
+                          <input  id="fac_NumI" name="fac_NumI" type="text" class="textos" style="top:34%; width:34%; left:51%; padding-top:1%; padding-bottom:1%" value="Num Int:" onFocus="borrar5a()" onBlur="checar5a()" tabindex="13">
                           
                           <div class="lineas" style="top:41%; width:34%"></div>
                           <div class="lineas" style="top:41%; width:34%; left:51%"></div>
     
                             
-                          <input id="fac_ColCli" name="fac_ColCli" type="text" class="textos" style="top:41%; padding-top:1%;" value="Colonia:" onFocus="borrar6a()" onBlur="checar6a()" tabindex="14">
+                          <input id="fac_ColCli" name="fac_ColCli" type="text" class="textos" style="top:41%; padding-top:1%; padding-bottom:1%" value="Colonia:" onFocus="borrar6a()" onBlur="checar6a()" tabindex="14">
                           <div class="lineas" style="top:48%"></div>
                           
                           
-                          <input id="fac_DelCli" name="fac_DelCli" type="text" class="textos" style="top:48%; padding-top:1%; width:34%" value="Municipio:" onFocus="borrar7a()" onBlur="checar7a()" tabindex="14">
-                          <input id="fac_CiuCli" name="fac_CiuCli" type="text" class="textos" style="top:48%; padding-top:1%; width:34%; left:51%" value="Ciudad:" onFocus="borrar8a()" onBlur="checar8a()" tabindex="14">
+                          <input id="fac_DelCli" name="fac_DelCli" type="text" class="textos" style="top:48%; padding-top:1%; padding-bottom:1%; width:34%" value="Municipio:" onFocus="borrar7a()" onBlur="checar7a()" tabindex="14">
+                          <input id="fac_CiuCli" name="fac_CiuCli" type="text" class="textos" style="top:48%; padding-top:1%; padding-bottom:1%; width:34%; left:51%" value="Ciudad:" onFocus="borrar8a()" onBlur="checar8a()" tabindex="14">
                           <div class="lineas" style="top:55%; width:34%"></div>
                           <div class="lineas" style="top:55%; width:34%; left:51%"></div>
                           
-                          <input id="fac_EdoCli" name="fac_EdoCli" type="text" class="textos" style="top:55%; padding-top:1%; width:34%" value="Estado:" onFocus="borrar9a()" onBlur="checar9a()" tabindex="14">
-                          <input id="fac_PaisCli" name="fac_PaisCli" type="text" class="textos" style="top:55%; padding-top:1%; width:34%; left:51%" value="Pais:" onFocus="borrar10a()" onBlur="checar10a()" tabindex="14">
+                          <input id="fac_EdoCli" name="fac_EdoCli" type="text" class="textos" style="top:55%; padding-top:1%; padding-bottom:1%; width:34%" value="Estado:" onFocus="borrar9a()" onBlur="checar9a()" tabindex="14">
+                          <input id="fac_PaisCli" name="fac_PaisCli" type="text" class="textos" style="top:55%; padding-top:1%; padding-bottom:1%; width:34%; left:51%" value="Pais:" onFocus="borrar10a()" onBlur="checar10a()" tabindex="14">
                           
                         
                           <div class="lineas" style="top:62%; width:34%"></div>
                           <div class="lineas" style="top:62%; width:34%; left:51%"></div>
                           
-                          <input id="fac_CPCli" name="fac_CPCli" type="text" class="textos" style="top:62%; padding-top:1%" value="Codigo Postal:" onFocus="borrar11a()" onBlur="checar11a()" tabindex="16">
+                          <input id="fac_CPCli" name="fac_CPCli" type="text" class="textos" style="top:62%; padding-top:1%; padding-bottom:1%" value="Codigo Postal:" onFocus="borrar11a()" onBlur="checar11a()" tabindex="16">
                           <div class="lineas" style="top:69%"></div>
                       
                       
@@ -808,7 +808,7 @@ my nibh sed diameuismod tincidunt.</i>
                         
                       
                         
-                      <div id="declaro1" class="avisos" style="top:73%; left:22%">Declaro IEPS</div>
+                      <div id="declaro1" class="avisos" style="top:73.5%; left:22%">Declaro IEPS</div>
                       <img id="declaro2" src="img/cuadrito.png" style="position:absolute; top:72.5%; height:5%; left:15%"/>
                       <img id="palomita3" src="img/palomita.png" style="position:absolute; top:72.5%; height:5%; left:15%; cursor:pointer; display:none"/> 
                       
@@ -825,7 +825,7 @@ my nibh sed diameuismod tincidunt.</i>
 						})
                       </script>
                       
-                      <div id="extranjero1" class="avisos" style="top:73%; left:57%">Extranjero</div>
+                      <div id="extranjero1" class="avisos" style="top:73.5%; left:57%">Extranjero</div>
                       <img id="extranjero2" src="img/cuadrito.png" style="position:absolute; top:72.5%; height:5%; left:50%"/> 
                       <img id="palomita4" src="img/palomita.png" style="position:absolute; top:72.5%; height:5%; left:50%; cursor:pointer; display:none"/> 
                       
