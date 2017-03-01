@@ -92,7 +92,7 @@
                 <div id="registro" class="contenido" style="visibility:hidden">
                       <div class="titulos" style="top:6%;">Registro</div>
                       
-   					<form name="forma_registro" id="forma_registro" method="post" action="http://dogs-life.com.mx/sm/enviar.php">
+   					<form name="forma_registro" id="forma_registro" method="post" action="addCliente.php">
                       <input id="nombre" name="nombre" type="text" class="textos" style="top:13%; padding-top:1%; padding-bottom:1%" value="Nombre:" onFocus="borrar1()" onBlur="checar1()" tabindex="1">
                       <div class="lineas" style="top:20%"></div>
                         
@@ -347,7 +347,7 @@
 				url: $(this).attr('action'),
 				data: $(this).serialize(),
 				success: function(data) {
-					   			//alert(data)
+					   			alert(data)
 								localStorage.setItem("codigo", data);
 								$('#clave').css('visibility','visible')
 								$('#clave').transition({left:'130%', rotate: '20deg'}, 0)
