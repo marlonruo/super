@@ -1,17 +1,10 @@
 <?php
-try{
-    $opts = array(
-        'http'=>array(
-            'user_agent' => 'PHPSoapClient'
-            )
-        );
-    $context = stream_context_create($opts);
-    $client = new SoapClient('http://187.174.212.229:8091/WS_B1_ClientesFrecuentes.asmx?wsdl',
-							
-                             array('stream_context' => $context,
-                                   'cache_wsdl' => WSDL_CACHE_NONE));
+ini_set('soap.wsdl_cache_enabled', 0);
+ini_set('soap.wsdl_cache_ttl', 900);
+ini_set('default_socket_timeout', 15);
 
-    $result = $client->addCliente(array('oCliente' => array(
+
+$params = array('oCliente' => array(
 		'NomCli' => 'DK', 
 		'RFC' => '123456789012',
 		'Email' => '47458714',
@@ -27,13 +20,29 @@ try{
 		'EdoCli' => '47458714',
 		'PaisCli' => '47458714',
 		'CpCli' => '47458714'
-	)));
-    //print_r($result);
-	//stdClass Object ( [addClienteResult] => E6930FC5 )
-	echo ($result->addClienteResult);
-}
-catch(Exception $e){
-    echo getMessage();
-}
-?>
+	));
 
+
+$wsdl = 'http://187.174.212.229:8091/WS_B1_ClientesFrecuentes.asmx?wsdl';
+
+$options = array(
+		'uri'=>'http://schemas.xmlsoap.org/soap/envelope/',
+		'style'=>SOAP_RPC,
+		'use'=>SOAP_ENCODED,
+		'soap_version'=>SOAP_1_1,
+		'cache_wsdl'=>WSDL_CACHE_NONE,
+		'connection_timeout'=>15,
+		'trace'=>true,
+		'encoding'=>'UTF-8',
+		'exceptions'=>true,
+	);
+try {
+	$soap = new SoapClient($wsdl, $options);
+	$data = $soap->addCliente($params);
+	echo ($data->addClienteResult);
+}
+catch(Exception $e) {
+	die($e->getMessage());
+}
+die;
+?>
