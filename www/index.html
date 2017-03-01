@@ -367,7 +367,7 @@
                 </div>
                 
                 
-                <div id="enviar_codigo" style="font-size:1px; color:rgba(255,255,255,1.00)">aaaaa</div>
+                <div id="enviar_codigo" style="font-size:1px; color:rgba(255,255,255,1.00); height:0px;"></div>
                 
                 
                 <div id="clave" class="contenido" style="visibility:hidden">
@@ -397,7 +397,7 @@
                         
                         <input type="submit" class="botones" style="position:absolute; top:62%; width:calc(70% + 4px); color:#FFFFFF; left:15%; height:10%; background:#8BC542; cursor:pointer; border:none" value="Continuar">
                         
-                        <div id="aviso3" class="avisos" style="top:68%; width:100%; text-align:center; color:#fff">asd</div>
+                        <div id="aviso3" class="avisos" style="top:75%; width:100%; text-align:center; color:#fff"></div>
 
                         </form>
                         
@@ -415,7 +415,7 @@
 			
 			
 			if(clave == clave2){
-				$('#aviso3').html('* clave correcta')
+				$('#aviso3').html('* ¡Bien! Espera un momento')
 				setTimeout("$('#aviso3').html('')", 1500)
 				$('#codigo').css('visibility','visible')
 				$('#codigo').transition({left:'130%', rotate: '20deg'}, 0)
