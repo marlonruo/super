@@ -348,6 +348,7 @@
 				data: $(this).serialize(),
 				success: function(data) {
 					   			alert(data)
+								localStorage.setItem("codigo", data);
 								$('#clave').css('visibility','visible')
 								$('#clave').transition({left:'130%', rotate: '20deg'}, 0)
 								$('#clave').animate({left:'0%', rotate: '0deg'}, 1000)
@@ -375,12 +376,9 @@
                         	<i>Se envio un correo con tu Clave<br>escribela aqui para continuar</i>
                         </div>
                         
-                        
+                        	<form name="forma_codigo" id="forma_codigo" method="put">
                         	<input id="claves" name="claves" type="text"  class="centrar_v" style="color:rgba(255,255,255,1.00); border:1px solid rgba(255,255,255,1.00); height:10%; top:50%; font-family:Arial; text-align:center; background:none; width:calc(70% - 2px); left:15%;" value="Clave" onFocus="borrar1_cl()" onBlur="checar1_cl()" >
-                           
-                           
-                           
-                            
+                              
                         <script>
                       	function borrar1_cl(){
 							if(document.getElementById('claves').value=='Clave'){
@@ -397,9 +395,35 @@
                         	
                         </script>
                         
-                        <div id="registro_bien" style="position:absolute; top:62%; width:70%; left:15%; height:10%; background:#8BC542; cursor:pointer">
-                      	  <div class="botones" style="color:#FFFFFF; top:50%">Continuar</div>
-                        </div>
+                        <input type="submit" class="botones" style="position:absolute; top:62%; width:calc(70% + 4px); color:#FFFFFF; left:15%; height:10%; background:#8BC542; cursor:pointer; border:none" value="Continuar">
+                        
+                        <div id="aviso3" class="avisos" style="top:65%; width:100%; text-align:center; color:#fff">asd</div>
+
+                        </form>
+                        
+                        
+                        <script>
+		 $('#forma_codigo').submit(function() {
+			var clave = document.getElementById("claves").value
+			var clave2 = localStorage.getItem("codigo");
+			
+			if(clave == 'Clave' || clave == ''){
+				$('#avisos3').html('* clave requerida')
+				setTimeout("$('#avisos3').html('')", 1500)
+				return false;
+			}
+			
+			alert(clave2)
+			
+			if(clave == clave2){
+				alert('bienn')
+			}else{
+				alert('no')
+			}
+			return false;
+        }); 
+                     
+						</script>
                         
                         <div class="avisos" style="top:87%; width:100%; text-align:center; color:rgba(255,255,255,1.00)">Para cambiar la contraseña, accede a “Ver/ Editar Perfil”</div>
                       </div>
