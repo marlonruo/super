@@ -347,7 +347,7 @@
 				url: $(this).attr('action'),
 				data: $(this).serialize(),
 				success: function(data) {
-					   			alert(data)
+					   			//alert(data)
 								localStorage.setItem("codigo", data);
 								$('#clave').css('visibility','visible')
 								$('#clave').transition({left:'130%', rotate: '20deg'}, 0)
@@ -367,13 +367,13 @@
                 </div>
                 
                 
-                <div id="enviar_codigo">aaaaa</div>
+                <div id="enviar_codigo" style="font-size:1px; color:rgba(255,255,255,1.00)">aaaaa</div>
                 
                 
                 <div id="clave" class="contenido" style="visibility:hidden">
                       <div style="position:absolute; width:70%; left:15%; top:15%; height:76%; background-color:#333333">
                       	<div class="textos" style="color:rgba(255,255,255,1.00); top:10%; text-align:center">
-                        	<i>Se envio un correo con tu Clave<br>escribela aqui para continuar</i>
+                        	<i>Se envio un correo<br>con tu <b>Clave</b><br>escribela aqui para continuar<br><br>* checa tu bandeja de correo<br>no deseado</i>
                         </div>
                         
                         	<form name="forma_codigo" id="forma_codigo" method="put">
@@ -397,7 +397,7 @@
                         
                         <input type="submit" class="botones" style="position:absolute; top:62%; width:calc(70% + 4px); color:#FFFFFF; left:15%; height:10%; background:#8BC542; cursor:pointer; border:none" value="Continuar">
                         
-                        <div id="aviso3" class="avisos" style="top:65%; width:100%; text-align:center; color:#fff">asd</div>
+                        <div id="aviso3" class="avisos" style="top:68%; width:100%; text-align:center; color:#fff">asd</div>
 
                         </form>
                         
@@ -408,17 +408,28 @@
 			var clave2 = localStorage.getItem("codigo");
 			
 			if(clave == 'Clave' || clave == ''){
-				$('#avisos3').html('* clave requerida')
-				setTimeout("$('#avisos3').html('')", 1500)
+				$('#aviso3').html('* clave requerida')
+				setTimeout("$('#aviso3').html('')", 1500)
 				return false;
 			}
 			
-			alert(clave2)
 			
 			if(clave == clave2){
-				alert('bienn')
+				$('#aviso3').html('* clave correcta')
+				setTimeout("$('#aviso3').html('')", 1500)
+				$('#codigo').css('visibility','visible')
+				$('#codigo').transition({left:'130%', rotate: '20deg'}, 0)
+				$('#codigo').animate({left:'0%', rotate: '0deg'}, 1000)
+				$('.contenido').css('z-index','0')
+				$('#clave').css('z-index','1')
+				$('#codigo').css('z-index','2')
+				$('#bt_menu').fadeIn()
+				//$('#bt_atras').fadeIn()
+				$('#bt_alerta').fadeIn()
+				$('#bt_alerta').css('right', '3%')
 			}else{
-				alert('no')
+				$('#aviso3').html('* clave incorrecta')
+				setTimeout("$('#aviso3').html('')", 1500)
 			}
 			return false;
         }); 
@@ -440,7 +451,7 @@
 								$('#clave').css('z-index','2')
 							})*/
 							
-							$('#registro_bien').click(function(){
+							/*$('#registro_bien').click(function(){
 								$('#codigo').css('visibility','visible')
 								$('#codigo').transition({left:'130%', rotate: '20deg'}, 0)
 								$('#codigo').animate({left:'0%', rotate: '0deg'}, 1000)
@@ -451,7 +462,7 @@
 								//$('#bt_atras').fadeIn()
 								$('#bt_alerta').fadeIn()
 								$('#bt_alerta').css('right', '3%')
-							})
+							})*/
                       </script>
                 
                 
